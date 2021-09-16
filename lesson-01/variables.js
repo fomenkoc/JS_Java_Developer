@@ -1,32 +1,39 @@
 "use strict"
-
-console.log("test");
+//1. variables declaration
 //var, let, const
 
 let message;
-message = "Hello World";
-
+message = 'hello';
 console.log(message);
 
-let user1 = "John Rembo", student1 = "Ghost", music = "Metal"
+
+let user1 = 'John Rembo', student1 = 'Pylyp Ivanovych', music = 'R&B';
 console.log(user1);
 console.log(student1);
 console.log(music);
 
-var person = "Haryton";
+var person = 'Haryton';
 console.log(person);
 
-//someVariable = 100;
-let someVariable = 100;
-console.log(someVariable);
+//2. variable naming
+let $ = 1;
+let _ = 2;
+console.log($+_);//3
 
-var OLD_CONSTANT = "Old constant";
-console.log(OLD_CONSTANT);
+//3. use strict
+let cutomVariable = 100;
+console.log(cutomVariable);
 
-const NEW_CONSTANT = "New constant";
-console.log(NEW_CONSTANT);
+//4. variables constants
+var CUSTOM_CONSTANT = 'Custom text';
+console.log(CUSTOM_CONSTANT);
 
-OLD_CONSTANT = OLD_CONSTANT + " upd";
-//NEW_CONSTANT = NEW_CONSTANT + " upd";
-console.log(OLD_CONSTANT);
-//console.log(NEW_CONSTANT);
+const NEW_CUSTOM_CONSTANT = "NEW TEXT";
+//NEW_CUSTOM_CONSTANT = 'reassign text'; //not allowed 
+let newCustomConstant = NEW_CUSTOM_CONSTANT;
+console.log(newCustomConstant);
+console.log(newCustomConstant+1);
+
+
+
+
