@@ -1,39 +1,48 @@
-"use strict"
-
-//1. numbers
+//1. Number
 let number1 = 123;
 console.log(number1);
-number1 = 123.123;
+number1 = 123.23;
 console.log(number1);
 
-//2. infinity NAN
-console.log(1/0);
-console.log("qwe"/1);
+//2. Infinity NAN
+console.log(1/0);//infinity
+console.log('test'/1);
 
-//3. strings
-let string1 = "string 1 custome text";
-let string2 = 'string 2 custome text';
-let string3 = `string 3 +${string2}`;
-let string4 = "string 4 +${string1}";
-
+//3. Strings
+let string1 = "string 1 custom text";
 console.log(string1);
+let string2 = 'string2 custom text';
 console.log(string2);
+let string3 = `string3 +${string2}`;
 console.log(string3);
-console.log(string4);
 
-//4. boolean
+//4.Boolean
 let boolean1 = true;
-let boolean2 = false;
-let boolean3 = 10 > 5;
-
 console.log(boolean1);
+let boolean2 = false;
 console.log(boolean2);
-console.log(boolean3);
+let isBigger = 8>7;
+console.log(isBigger);
 
-//5. null
-let nullVar = null;
-console.log(nullVar);
+//5.Null
+let nullvariable = null;
+console.log(nullvariable);
 
-//6. undefined
-let x;
+
+//6 undefiend
+let x = 123;
+x = undefined;
 console.log(x);
+console.log('\n');
+
+//7 type of
+console.log(typeof undefined);
+console.log(typeof 0);
+console.log(typeof 'food');
+
+
+
+
+
+
+
