@@ -8,7 +8,7 @@
 */
 console.log()
 console.log("Task 1:")
-var user = {};
+let user = {};
 user.name = "ПИЛИП";
 user.surname = "ШЕВЧЕНКО";
 console.log(user);
@@ -24,18 +24,18 @@ console.log(user);
 */
 console.log()
 console.log("Task 2:")
-var employeeSalaries = {
+const employeeSalaries = {
 	emp01Salary: 5500,
 	emp02Salary: 3500,
 	emp03Salary: 7700,
 	emp04Salary: 6600,
 	emp05Salary: 4400
 };
-var employeeSalaries2 = {};
+const employeeSalaries2 = {};
 
 function calcEmployeeSalaries(empSal) {
-	var sum = 0;
-	for (var key in empSal) {
+	let sum = 0;
+	for (let key in empSal) {
 		sum += empSal[key];
 	}
 	return sum;
