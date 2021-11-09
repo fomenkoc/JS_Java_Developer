@@ -67,18 +67,22 @@ console.log(rocknRoll + " id = " + find(styles, rocknRoll));
 console.log();
 console.log("Task 4:");
 
-function filterRange(array, a, b) {
+function myFilterRange(array, a, b) {
 	let resultArray = [];
 	for (let i = 0; i < array.length; i++) {
 		if (array[i] >= a && array[i] <= b) {
 			resultArray.push(array[i]);
-			//console.log(array[i]);
 		}
 	}
 	return resultArray;
 }
 
+function filterRange(array, a, b) {
+	return array.filter(x => x >= a && x <= b);
+}
+
 let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(myFilterRange(numArray, 3, 7));
 console.log(filterRange(numArray, 3, 7));
 
 /*
@@ -99,7 +103,7 @@ function camelize(str) {
 		}
 		else {
 			tmpStr += tmpArray[i].slice(0, 1).toUpperCase()
-										+ tmpArray[i].slice(1);
+				+ tmpArray[i].slice(1);
 		}
 	}
 	return tmpStr;
