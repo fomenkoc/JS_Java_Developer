@@ -8,7 +8,6 @@ function makeBuffer() {
 			arrayBuffer.push(newElement);
 		},
 		buffer: function() {
-			//return arrayBuffer;
 			return arrayBuffer.join(" ");
 		},
 		clear: function(){
