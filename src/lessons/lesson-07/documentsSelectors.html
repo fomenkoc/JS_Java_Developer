@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Documents Selectors</title>
+<script src="documentsSelectors.js"></script>
+</head>
+<body>
+
+	<!-- get elements by id -->
+	<div id="content-holder">
+		<div id="content">Custom Element</div>
+	</div>
+
+	<button onclick="selectByIdElement()">select element by id</button>
+	<button onclick="changeColorToRed()">Change background color
+		to Red</button>
+
+
+	<!-- get elements by tag name -->
+	<table id="custom-table">
+		<tr>
+			<td><label>First data <input type="radio" name='first'
+					value='First input'>
+			</label> <label>Second data <input type="radio" name='first'
+					value='Second input'>
+			</label> <label>Third data <input type="radio" name='first'
+					value='Third input'>
+			</label></td>
+		</tr>
+	</table>
+	<button onclick="selectByTagName()">Switch radioButton</button>
+
+
+
+	<!-- use query selectors -->
+	<ul>
+		<li>This</li>
+		<li>test</li>
+	</ul>
+
+	<ul>
+		<li>is fully</li>
+		<li>passed</li>
+	</ul>
+
+	<button onclick="useQuerySelector()">extract last data from list</button>
+
+	
+	<div id ='divWithCustomAttributes' 
+	     data-about='About Logos academy'
+	     data-current-student-name='Petro Petrovych'>
+		 We are walking through the street!!!
+	</div>
+	
+	<button onclick="selectCustomAttributes()">select data-* attributes</button>
+	
+</body>
+</html>
