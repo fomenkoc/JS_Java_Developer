@@ -1,0 +1,12 @@
+#menuTitle{
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+.flex{
+	display: flex;
+}
+
+.hide {
+	display: none;
+}
