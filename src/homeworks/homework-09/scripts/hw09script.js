@@ -25,6 +25,8 @@ function sendDataByGet() {
 		+ "&address=" + userData.address);
 	xhr.setRequestHeader("Content-type", "application/json");
 	xhr.send();
+	
+	logToConsole(userData, "GET");
 
 }
 
@@ -41,6 +43,17 @@ function sendDataByPost() {
 	xhr.setRequestHeader("Content-type", "application/json");
 	xhr.send(JSON.stringify(userData));
 
+	logToConsole(userData, "POST");
+}
+
+function logToConsole(data, type){
+	let validated = ".ValidatedBy" + type;
+	data.fName += validated;
+	data.lName += validated;
+	data.age += validated;
+	data.address += validated;
+	
+	console.log(data);
 }
 
 age.onblur = function() {
