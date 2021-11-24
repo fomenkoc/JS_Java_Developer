@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="jqueryScripts.js"></script>
+<title>jquery</title>
+
+<style>
+.selected{
+	color: pink;
+}
+</style>
+
+</head>
+<body>
+
+	<h4>Selectors part</h4>
+	<!-- selectors -->
+	<div id='selectors'>
+		<p class="mySelectorsClass">this is first paragraph with selectors</p>
+		<p>this is second paragraph without class</p>
+	</div>
+
+	<div id='selectors2'>
+		<p class="mySelectorsClass">this is first paragraph with selectors</p>
+		<p>this is second paragraph without class</p>
+	</div>
+
+	<h4>Attributes part</h4>
+	<div id='attributes'>
+		<i title="Bond, James Bond" id="pHero">This paragraph have name of famous hero</i>
+		<p> this paragraph doens`t have any hero </p>
+		<div id="heroName"></div>
+	</div>
+
+	<h4>Ajax</h4>
+	<input id='ajaxGet'  type="button" value="send GET ajax">
+	<input id='ajaxPost' type="button" value="send POST ajax">
+</body>
+</html>
