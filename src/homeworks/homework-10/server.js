@@ -33,4 +33,4 @@ server.post("/userPost", function (request, response) {
     console.log('Data is loaded POST method');
 });
 
-server.listen(80);
+server.listen(3000);

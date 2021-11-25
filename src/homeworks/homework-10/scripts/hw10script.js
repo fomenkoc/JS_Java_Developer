@@ -1,62 +1,51 @@
 "use strict";
 
 function disableButtons() {
-	sendByGet.disabled = true;
-	sendByPost.disabled = true;
+	$("#sendByGet").prop("disabled", true);
+	$("#sendByPost").prop("disabled", true);
 }
 
 function enableButtons() {
-	sendByGet.disabled = false;
-	sendByPost.disabled = false;
+	$("#sendByGet").prop("disabled", false);
+	$("#sendByPost").prop("disabled", false);
 }
 
 function sendDataByGet() {
-	let userData = {
-		lName: document.getElementById("lastName").value,
-		fName: document.getElementById("firstName").value,
-		age: document.getElementById("age").value,
-		address: document.getElementById("address").value
-	}
-
-	let xhr = new XMLHttpRequest();
-	xhr.open("GET", "/userGet?lName=" + userData.lName
-		+ "&fName=" + userData.fName
-		+ "&age=" + userData.age
-		+ "&address=" + userData.address);
-	xhr.setRequestHeader("Content-type", "application/json");
-	xhr.send();
-	
-	logToConsole(userData, "GET");
+	$.ajax({
+		type: "GET",
+		contentType: "application/json",
+		url: "http://localhost:3000/userGet?userName=" + $("#firstName").val()
+			+ " " + $("#lastName").val()
+			+ "&userAge=" + $("#age").val()
+			+ "&userAddress=" + $("#address").val(),
+		success: function(data) {
+			console.log('success');
+			console.log(JSON.stringify(data));
+		}
+	});
 
 }
 
 function sendDataByPost() {
-	let userData = {
-		lName: document.getElementById("lastName").value,
-		fName: document.getElementById("firstName").value,
-		age: document.getElementById("age").value,
-		address: document.getElementById("address").value
-	}
-
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", "/userPost");
-	xhr.setRequestHeader("Content-type", "application/json");
-	xhr.send(JSON.stringify(userData));
-
-	logToConsole(userData, "POST");
+	$.ajax({
+		type: "POST",
+		data: JSON.stringify({
+			userName: $("#firstName").val() + " " + $("#lastName").val(),
+			userAge: $("#age").val(),
+			userAddress: $("#address").val()
+		}),
+		contentType: "application/json",
+		url: "http://localhost:3000/userPost",
+		success: function(data) {
+			console.log('success');
+			console.log(JSON.stringify(data));
+		}
+	})
 }
 
-function logToConsole(data, type){
-	let validated = ".ValidatedBy" + type;
-	data.fName += validated;
-	data.lName += validated;
-	data.age += validated;
-	data.address += validated;
-	
-	console.log(data);
-}
 
-age.onblur = function() {
+
+$("#age").on("blur", function() {
 	if (age.value < 1 || age.value > 100) {
 		this.classList.add("error");
 		disableButtons();
@@ -65,9 +54,9 @@ age.onblur = function() {
 		enableButtons();
 	}
 
-}
+})
+
 
 $("#sendByGet").on("click", sendDataByGet);
 $("#sendByPost").on("click", sendDataByPost);
-//sendByGet.onclick = sendDataByGet;
-//sendByPost.onclick = sendDataByPost;
+
